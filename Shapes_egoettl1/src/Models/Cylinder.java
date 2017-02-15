@@ -64,5 +64,17 @@ public class Cylinder extends Shape {
 				+ ",and a volume of " + this.volume());
 
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null) {
+			return false;
+		}
+		if(!Cylinder.class.isAssignableFrom(obj.getClass())) {
+			return false;
+		}
+		return true;
+		
+	}
 
 }
