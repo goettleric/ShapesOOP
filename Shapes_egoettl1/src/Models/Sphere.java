@@ -54,5 +54,17 @@ public class Sphere extends Shape {
 				+ this.radius + ", a surface area of " + this.surfaceArea() 
 				+ ", and a volume of " + this.volume());
 	}
+	
 
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null) {
+			return false;
+		}
+		if(!Sphere.class.isAssignableFrom(obj.getClass())) {
+			return false;
+		}
+		return true;
+		
+	}
 }
