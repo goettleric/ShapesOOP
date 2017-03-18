@@ -5,9 +5,6 @@ package Models;
 
 import javax.swing.JOptionPane;
 
-import org.cvtc.shapes.Dialog;
-
-
 /**
  * @author ericgoettl
  *
@@ -27,13 +24,9 @@ public class Sphere extends Shape {
 		this.radius = radius;
 	}
 	
-	/**
-	 * @param messageBox
-	 */
-	public Sphere(Dialog messageBox,float radius) {
-		super(messageBox);
+	//Constructor for Sphere
+	public Sphere(float radius) {
 		setRadius(radius);
-		// TODO Auto-generated constructor stub
 	}
 	
 	//Method  used to find the surface area of a Sphere
@@ -52,26 +45,14 @@ public class Sphere extends Shape {
 		return volume;
 	}
 	
-
+	//Method used to display a customized message with details about the object
+	//created from this subclass.
 	@Override
-	public boolean equals(Object obj) {
-		if(obj == null) {
-			return false;
-		}
-		if(!Sphere.class.isAssignableFrom(obj.getClass())) {
-			return false;
-		}
-		return true;
-		
-	}
-
-	@Override
-	public int show(String message, String title) {
-		JOptionPane.showMessageDialog(null,"The "+title+" you created has a radius of " 
+	public void render() {
+		// TODO Auto-generated method stub
+		JOptionPane.showMessageDialog(null,"The Sphere you created has a radius of " 
 				+ this.radius + ", a surface area of " + this.surfaceArea() 
-				+ ", and a volume of " + this.volume()+ ".  " + message);
-		return 0;
+				+ ", and a volume of " + this.volume());
 	}
-
 
 }

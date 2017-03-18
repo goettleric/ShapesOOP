@@ -37,18 +37,13 @@ public class Shapes {
 			
 			//Check for numbers less than zero
 			if (enteredHeight > 0 && enteredWidth > 0 && enteredDepth > 0 && enteredRadius > 0) {
+				Cuboid newCuboid = new Cuboid(enteredWidth, enteredHeight, enteredDepth);
+				Cylinder newCylinder = new Cylinder(enteredRadius, enteredHeight);
+				Sphere newSphere = new Sphere(enteredRadius);
 				
-				MessageBox cuboidDialogBox = new MessageBox();
-				MessageBox cylinderDialogBox = new MessageBox();
-				MessageBox sphereDialogBox = new MessageBox();
-				
-				Cuboid newCuboid = new Cuboid(cuboidDialogBox, enteredRadius, enteredRadius, enteredRadius);
-				Cylinder newCylinder = new Cylinder(cylinderDialogBox,enteredRadius, enteredHeight);
-				Sphere newSphere = new Sphere(sphereDialogBox,enteredRadius);
-				
-				newCuboid.show(" Great square."," cuboid");
-				newCylinder.show(" Like a can."," cylinder");
-				newSphere.show(" The ball.","sphere");
+				newCuboid.render();
+				newCylinder.render();
+				newSphere.render();
 			} else {
 				System.out.println("All numbers need to be positive.");
 			}

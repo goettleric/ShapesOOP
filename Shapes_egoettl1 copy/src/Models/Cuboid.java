@@ -5,8 +5,6 @@ package Models;
 
 import javax.swing.JOptionPane;
 
-import org.cvtc.shapes.Dialog;
-
 /**
  * @author Eric Goettl
  *
@@ -44,22 +42,13 @@ public class Cuboid extends Shape {
 		this.width = width;
 	}
 	
-	/**
-	 * @param messageBox
-	 * 
-	 * @param messageBox
-	 * @param height
-	 * @param depth
-	 * @param width
-	 */
-	public Cuboid(Dialog messageBox,float width, float height, float depth) {
-		super(messageBox);
+	//Constructor for Cuboid
+	public Cuboid(float width, float height, float depth) {
 		setWidth(width);
 		setHeight(height);
 		setDepth(depth);
 	}
 	
-
 	//Method that calculates the surface area of a Cuboid
 	@Override
 	public float surfaceArea() {
@@ -76,28 +65,14 @@ public class Cuboid extends Shape {
 		return volume;
 	}
 	
-	
+	//Method that displays a customized message with details about the object
+	//that was created by this subclass.
 	@Override
-	public boolean equals(Object obj) {
-		if(obj == null) {
-			return false;
-		}
-		if(!Cuboid.class.isAssignableFrom(obj.getClass())) {
-			return false;
-		}
-		return true;
-		
-	}
-
-	@Override
-	public int show(String message, String title) {
-		JOptionPane.showMessageDialog(null, "The"+ title +" has a width of " 
-				+ this.width + ", a height of " + this.height + ", a depth of " 
-				+ this.depth + ", a surface area of " + this.surfaceArea() 
-				+ ", and a volume of " + this.volume() + ". " + message);
-		
-		return 0;
-	}
-
-
+	public void render() {
+		JOptionPane.showMessageDialog(null, "The Cuboid has a width of " 
+			+ this.width + ", a height of " + this.height + ", a depth of " 
+			+ this.depth + ", a surface area of " + this.surfaceArea() 
+			+ ", and a volume of " + this.volume());
+			
+	}	
 }

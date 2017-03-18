@@ -5,8 +5,6 @@ package Models;
 
 import javax.swing.JOptionPane;
 
-import org.cvtc.shapes.Dialog;
-
 /**
  * @author ericgoettl
  *
@@ -35,18 +33,11 @@ public class Cylinder extends Shape {
 		this.height = height;
 	}
 	
-	
-	/**
-	 * @param messageBox
-	 * @param radius
-	 * @param height
-	 */
-	public Cylinder(Dialog messageBox, float radius, float height) {
-		super(messageBox);
+	//Constructor method for Cylinder
+	public Cylinder(float radius, float height) {
 		setRadius(radius);
 		setHeight(height);
 	}
-
 	
 	//Method used to calculate the surface area of a Cylinder
 	@Override
@@ -64,28 +55,14 @@ public class Cylinder extends Shape {
 		return volume;
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if(obj == null) {
-			return false;
-		}
-		if(!Cylinder.class.isAssignableFrom(obj.getClass())) {
-			return false;
-		}
-		return true;
-		
-	}
-	
 	//Method used to show a customized message with details about the object
 	//created from this subclass.
 	@Override
-	public int show(String message, String title) {
-		JOptionPane.showMessageDialog(null, "The "+title+" has a radius of " 
+	public void render() {
+		JOptionPane.showMessageDialog(null, "The Cylinder has a radius of " 
 				+ this.radius + ", a height of " + this.height +   ", a surface area of " + this.surfaceArea() 
-				+ ",and a volume of " + this.volume() + ".  " +message) ;
+				+ ",and a volume of " + this.volume());
 
-		return 0;
 	}
-
 
 }
